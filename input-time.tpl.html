@@ -1,0 +1,27 @@
+<div class="time-picker" ng-if="vm.loaded">
+	<div class="input-group" style="text-align:center;">
+	  <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+	  <input ng-disabled="vm.disabled" type="text" class="form-control input-time-display" ng-model="vm.display" ng-focus="vm.focus()" ng-blur="vm.blur()" ng-keyup="vm.reset()">
+	</div>
+	<div class="time-picker-select" ng-if="vm.open" ng-click="vm.mouse()" ng-mousedown="vm.mouse()" ng-mouseup="vm.mouse()">
+		<table>
+			<tr>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustHour('up')"><i class="fa fa-chevron-up"></i></a></td>
+				<td rowspan="3">:</td>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustMinute('up')"><i class="fa fa-chevron-up"></i></a></td>
+				<td rowspan="3">:</td>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustAmPm()"><i class="fa fa-chevron-up"></i></a></td>
+			</tr>
+			<tr>
+				<td class="display-time">{{vm.hour}}</td>
+				<td class="display-time">{{vm.minute}}</td>
+				<td class="display-time">{{vm.ampm}}</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustHour('down')"><i class="fa fa-chevron-down"></i></a></td>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustMinute('down')"><i class="fa fa-chevron-down"></i></a></td>
+				<td><a class="btn btn-secondary btn-sm" ng-click="vm.adjustAmPm()"><i class="fa fa-chevron-down"></i></a></td>
+			</tr>
+		</table>
+	</div>
+</div>
